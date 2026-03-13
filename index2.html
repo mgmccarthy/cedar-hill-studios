@@ -31,6 +31,7 @@
     border-radius: 999px;
     overflow: hidden;
     margin-bottom: 1rem;
+	width: 60%;
   }
 
   .ab-player .progress__bar {
@@ -114,6 +115,28 @@
     opacity: 0.55;
     cursor: default;
   }
+
+  /* Center everything inside the player card */
+.ab-player .player__wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center the progress bar */
+.ab-player .progress__container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center button rows */
+.ab-player .ab__controls,
+.ab-player .play__stop__controls {
+  justify-content: center;
+}
+
 </style>
 
 
@@ -170,8 +193,9 @@
 
 									<section>
 										<h3 class="major">Mix Samples</h3>
-										<p><span class="image right"><img src="images/TapeReel2.jpg" alt="" /></span>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien. Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
-										
+										<h4>Mix Samples</h4>
+										<p>Mix Samples</p>
+
 										<div class="ab-player">
 											<div class="players">
 												<div class="player__wrapper"
@@ -183,24 +207,10 @@
 												<div class="progress__bar progress__fill"></div>
 												</div>
 												<div class="ab__controls">
-													<!-- <button class="ab__button a__button" disabled="true">Raw</button>
-													<button class="ab__button b__button" disabled="true">Finished</button> -->
 													<button class="button small a__button">Raw</button>
   													<button class="button small b__button">Finished</button>
 												</div>
 												<div class="play__stop__controls">
-													<!-- <button class="play__pause__button play__button" disabled="true"><i class="fa-solid fa-play"></i></button>
-													<button class="play__pause__button stop__button" disabled="true"><i class="fa-solid fa-stop"></i></button> -->
-
-													<!-- <button class="button small play__button">Play</button>
-  													<button class="button small stop__button">Stop</button> -->
-
-													<!-- <a class="button small icon solid fa-play play__button">Play</a>
-  													<a class="button small icon solid fa-stop stop__button">Stop</a> -->
-
-													<!-- <button class="button small icon solid fa-play play__pause__button play__button" disabled>Play</button>
-													<button class="button small icon solid fa-stop play__pause__button stop__button" disabled>Stop</button> -->
-
 													<button class="button small play__pause__button play__button" disabled>
 														<span class="icon solid fa-play"></span><span>Play</span>
 													</button>
@@ -211,7 +221,13 @@
 												</div>
 											</div>
 										</div>
+
 									</section>
+
+									<!-- <section>
+										<h3 class="major">Mix Samples</h3>
+										<p><span class="image right"><img src="images/TapeReel2.jpg" alt="" /></span>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien. Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+									</section> -->
 
 									<!--
 									<section>

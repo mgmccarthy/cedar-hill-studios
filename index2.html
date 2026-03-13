@@ -60,6 +60,12 @@
 			.ab-player button:hover {
 				border-color: rgba(255,255,255,0.5);
 				}
+
+			.ab__controls .button.active {
+  				background-color: #ffffff !important;
+  				color: #4c5c96 !important;
+  				box-shadow: none !important;
+				}
 		</style>
 
 	</head>
@@ -128,16 +134,27 @@
 												<div class="progress__bar progress__fill"></div>
 												</div>
 												<div class="ab__controls">
-													<button class="ab__button a__button" disabled="true">Raw</button>
-													<button class="ab__button b__button" disabled="true">Finished</button>
+													<!-- <button class="ab__button a__button" disabled="true">Raw</button>
+													<button class="ab__button b__button" disabled="true">Finished</button> -->
+													<button class="button small a__button">Raw</button>
+  													<button class="button small b__button">Finished</button>
 												</div>
 												<div class="play__stop__controls">
-													<button class="play__pause__button play__button" disabled="true">
-													<i class="fa-solid fa-play"></i>
+													<!-- <button class="play__pause__button play__button" disabled="true"><i class="fa-solid fa-play"></i></button>
+													<button class="play__pause__button stop__button" disabled="true"><i class="fa-solid fa-stop"></i></button> -->
+
+													<!-- <button class="button small play__button">Play</button>
+  													<button class="button small stop__button">Stop</button> -->
+
+													<!-- <a class="button small icon solid fa-play play__button">Play</a>
+  													<a class="button small icon solid fa-stop stop__button">Stop</a> -->
+
+													<button class="button small icon solid fa-play play__pause__button play__button" disabled>
+    													Play
 													</button>
-													<button class="play__pause__button stop__button" disabled="true">
-														<i class="fa-solid fa-stop"></i>
-													</button>
+													<button class="button small icon solid fa-stop play__pause__button stop__button" disabled>
+    													Stop
+  													</button>
 												</div>
 											</div>
 										</div>

@@ -14,8 +14,58 @@
 
 		<!-- start from A/B Player -->
 		<!-- <link rel="stylesheet" href="./css/style.css" /> -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mattbartley/AB-Audio-Player@main/css/style.css">
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mattbartley/AB-Audio-Player@main/css/style.css"> -->
 		<!-- end from A/B Player -->
+
+		<style>
+			.ab-player {
+				margin: 2rem 0;
+				}
+
+			.ab-player .player__wrapper {
+				padding: 1.5rem;
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 12px;
+				background: rgba(255,255,255,0.04);
+				max-width: 36rem;
+				}
+
+			.ab-player .progress__container {
+				height: 0.5rem;
+				background: rgba(255,255,255,0.12);
+				border-radius: 999px;
+				overflow: hidden;
+				margin-bottom: 1rem;
+				}
+
+			.ab-player .progress__bar {
+				height: 100%;
+				width: 0%;
+				background: #ffffff;
+				}
+
+			.ab-player .ab__controls,
+			.ab-player .play__stop__controls {
+				display: flex;
+				gap: 0.75rem;
+				margin-top: 1rem;
+				}
+
+			.ab-player button {
+				appearance: none;
+				border: 1px solid rgba(255,255,255,0.25);
+				background: transparent;
+				color: inherit;
+				padding: 0.65rem 1rem;
+				border-radius: 8px;
+				cursor: pointer;
+				font: inherit;
+				}
+
+			.ab-player button:hover {
+				border-color: rgba(255,255,255,0.5);
+				}
+		</style>
 
 	</head>
 	<body class="is-preload">
@@ -78,36 +128,37 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/TapeReel.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Show Reel</h2>
+										<h2 class="major">Mix Examples</h2>
 										<p>Below are examples of my work. All mixes were performed at Cedar Hill Studios and are not competitively loud or mastered. As such, there will be volume differences between the RAW and FINISHED tracks.</p>
 										<!-- <a href="#" class="special">Learn more</a> -->
 
-										<div class="players">
+										<div class="ab-player">
+											<div class="players">
+												<div class="player__wrapper"
+													data-audio-a="https://www.dropbox.com/scl/fi/7o55wp48t8cgysuw5p641/BETWEEN-MIRRORS.mp3?rlkey=fi8ij1785jsygm5jkuzhaf0cr&st=wydgwicy&raw=1"
+													data-audio-b="https://www.dropbox.com/scl/fi/hu4616gsmn303qdoxhbok/BETWEEN-MIRRORS-17.mp3?rlkey=shzawnlnwlbrw6objqe2mx0y7&st=tdk7m4w2&raw=1"
+												>
+												Heavy Hearts - Between Mirrors
+												<div class="progress__container progress">
+												<div class="progress__bar progress__fill"></div>
+												</div>
+												<div class="ab__controls">
+												<button class="ab__button a__button" disabled="true">A</button>
+												<button class="ab__button b__button" disabled="true">B</button>
+												</div>
+												<div class="play__stop__controls">
+												<button class="play__pause__button play__button" disabled="true">
+													<i class="fa-solid fa-play"></i>
+												</button>
+												<button class="play__pause__button stop__button" disabled="true">
+													<i class="fa-solid fa-stop"></i>
+												</button>
+												</div>
 
-											<div class="player__wrapper"
-												data-audio-a="https://www.dropbox.com/scl/fi/7o55wp48t8cgysuw5p641/BETWEEN-MIRRORS.mp3?rlkey=fi8ij1785jsygm5jkuzhaf0cr&st=wydgwicy&raw=1"
-												data-audio-b="https://www.dropbox.com/scl/fi/hu4616gsmn303qdoxhbok/BETWEEN-MIRRORS-17.mp3?rlkey=shzawnlnwlbrw6objqe2mx0y7&st=tdk7m4w2&raw=1"
-											>
-											Heavy Hearts - Between Mirrors
-											<div class="progress__container progress">
-											<div class="progress__bar progress__fill"></div>
+												<!-- <script src="./js/ab-player.js"></script> -->
+												<script src="https://cdn.jsdelivr.net/gh/mattbartley/AB-Audio-Player@main/js/ab-player.js"></script>
+												</div>
 											</div>
-											<div class="ab__controls">
-											<button class="ab__button a__button" disabled="true">A</button>
-											<button class="ab__button b__button" disabled="true">B</button>
-											</div>
-											<div class="play__stop__controls">
-											<button class="play__pause__button play__button" disabled="true">
-												<i class="fa-solid fa-play"></i>
-											</button>
-											<button class="play__pause__button stop__button" disabled="true">
-												<i class="fa-solid fa-stop"></i>
-											</button>
-											</div>
-											<!-- <script src="./js/ab-player.js"></script> -->
-											<script src="https://cdn.jsdelivr.net/gh/mattbartley/AB-Audio-Player@main/js/ab-player.js"></script>
-											</div>
-
 										</div>
 									</div>
 								</div>

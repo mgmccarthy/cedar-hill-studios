@@ -13,60 +13,99 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<style>
-			.ab-player {
-				margin: 2rem 0;
-				}
+  .ab-player {
+    margin: 2rem 0;
+  }
 
-			.ab-player .player__wrapper {
-				padding: 1.5rem;
-				border: 1px solid rgba(255,255,255,0.15);
-				border-radius: 12px;
-				background: rgba(255,255,255,0.04);
-				max-width: 36rem;
-				}
+  .ab-player .player__wrapper {
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    max-width: 36rem;
+  }
 
-			.ab-player .progress__container {
-				height: 0.5rem;
-				background: rgba(255,255,255,0.12);
-				border-radius: 999px;
-				overflow: hidden;
-				margin-bottom: 1rem;
-				}
+  .ab-player .progress__container {
+    height: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
 
-			.ab-player .progress__bar {
-				height: 100%;
-				width: 0%;
-				background: #ffffff;
-				}
+  .ab-player .progress__bar {
+    height: 100%;
+    width: 0%;
+    background: #ffffff;
+  }
 
-			.ab-player .ab__controls,
-			.ab-player .play__stop__controls {
-				display: flex;
-				gap: 0.75rem;
-				margin-top: 1rem;
-				}
+  .ab-player .ab__controls,
+  .ab-player .play__stop__controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
 
-			.ab-player button {
-				appearance: none;
-				border: 1px solid rgba(255,255,255,0.25);
-				background: transparent;
-				color: inherit;
-				padding: 0.65rem 1rem;
-				border-radius: 8px;
-				cursor: pointer;
-				font: inherit;
-				}
+  .ab-player button,
+  .ab-player .button {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: inherit;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    box-shadow: none !important;
+  }
 
-			.ab-player button:hover {
-				border-color: rgba(255,255,255,0.5);
-				}
+  .ab-player button:hover,
+  .ab-player .button:hover {
+    border-color: rgba(255,255,255,0.5);
+  }
 
-			.ab__controls .button.active {
-  				background-color: #ffffff !important;
-  				color: #4c5c96 !important;
-  				box-shadow: none !important;
-				}
-		</style>
+  /* Default A/B state */
+  .ab-player .ab__controls .button,
+  .ab-player .ab__controls button {
+    background: transparent;
+    color: rgba(255,255,255,0.55);
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  /* Selected A/B state: the script uses disabled=true for the active source */
+  .ab-player .ab__controls .button:disabled,
+  .ab-player .ab__controls button:disabled {
+    opacity: 1 !important;
+    background: rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.35) !important;
+    cursor: default;
+  }
+
+  /* Unselected A/B state */
+  .ab-player .ab__controls .button:not(:disabled),
+  .ab-player .ab__controls button:not(:disabled) {
+    background: transparent !important;
+    color: rgba(255,255,255,0.45) !important;
+    border-color: rgba(255,255,255,0.14) !important;
+  }
+
+  /* Play / Stop sizing */
+  .ab-player .play__stop__controls .button,
+  .ab-player .play__stop__controls button {
+    min-width: 8rem;
+    text-align: center;
+  }
+
+  /* Keep play/stop visible before initialization */
+  .ab-player .play__stop__controls .button:disabled,
+  .ab-player .play__stop__controls button:disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+</style>
+
 
 	</head>
 	<body class="is-preload">

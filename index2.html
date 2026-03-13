@@ -11,6 +11,57 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			.ab-player {
+				margin: 2rem 0;
+				}
+
+			.ab-player .player__wrapper {
+				padding: 1.5rem;
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 12px;
+				background: rgba(255,255,255,0.04);
+				max-width: 36rem;
+				}
+
+			.ab-player .progress__container {
+				height: 0.5rem;
+				background: rgba(255,255,255,0.12);
+				border-radius: 999px;
+				overflow: hidden;
+				margin-bottom: 1rem;
+				}
+
+			.ab-player .progress__bar {
+				height: 100%;
+				width: 0%;
+				background: #ffffff;
+				}
+
+			.ab-player .ab__controls,
+			.ab-player .play__stop__controls {
+				display: flex;
+				gap: 0.75rem;
+				margin-top: 1rem;
+				}
+
+			.ab-player button {
+				appearance: none;
+				border: 1px solid rgba(255,255,255,0.25);
+				background: transparent;
+				color: inherit;
+				padding: 0.65rem 1rem;
+				border-radius: 8px;
+				cursor: pointer;
+				font: inherit;
+				}
+
+			.ab-player button:hover {
+				border-color: rgba(255,255,255,0.5);
+				}
+		</style>
+
 	</head>
 	<body class="is-preload">
 
@@ -57,12 +108,44 @@
 
 									<section>
 										<h3 class="major">About</h3>
-										<p><span class="image left"><img src="images/about.jpg" alt="" /></span>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien. Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+										<p>
+										<span class="image left"><img src="images/about.jpg" alt="" /></span>Cedar Hill Studios is the mixing home of Michael McCarthy — a multi-instrumentalist, producer, and mixing engineer with a deep musical background and over a decade of experience working across genres. Before launching Cedar Hill Studios, Michael was an engineer at <a href="https://www.rangerecordingstudio.com/">Range Recording Studios</a>, where he learned professional tracking, editing, and mixing workflows while working alongside experienced engineers and diverse artists. A classically and jazz-trained trumpet player, Michael carries that strong musical foundation into every mix — bringing instinctive attention to dynamics, phrasing, arrangement, and emotional impact. With hands-on experience in rock, alternative, singer-songwriter, acoustic, jazz, and modern production styles, Michael approaches each project with a musician's ear, an engineer's precision and a performer's heart.</p>
+										<p>&nbsp;</p>
 									</section>
 
 									<section>
 										<h3 class="major">Mix Samples</h3>
 										<p><span class="image right"><img src="images/TapeReel2.jpg" alt="" /></span>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien. Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+										
+										<p>what happens if I do this?</p>
+										
+										<p>or this?</p>
+										<p>
+										<div class="ab-player">
+											<div class="players">
+												<div class="player__wrapper"
+													data-audio-a="https://www.dropbox.com/scl/fi/7o55wp48t8cgysuw5p641/BETWEEN-MIRRORS.mp3?rlkey=fi8ij1785jsygm5jkuzhaf0cr&st=wydgwicy&raw=1"
+													data-audio-b="https://www.dropbox.com/scl/fi/hu4616gsmn303qdoxhbok/BETWEEN-MIRRORS-17.mp3?rlkey=shzawnlnwlbrw6objqe2mx0y7&st=tdk7m4w2&raw=1"
+												>
+												Heavy Hearts - Between Mirrors
+												<div class="progress__container progress">
+												<div class="progress__bar progress__fill"></div>
+												</div>
+												<div class="ab__controls">
+													<button class="ab__button a__button" disabled="true">Raw</button>
+													<button class="ab__button b__button" disabled="true">Finished</button>
+												</div>
+												<div class="play__stop__controls">
+													<button class="play__pause__button play__button" disabled="true">
+													<i class="fa-solid fa-play"></i>
+													</button>
+													<button class="play__pause__button stop__button" disabled="true">
+														<i class="fa-solid fa-stop"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+										</p>
 									</section>
 
 									<!--
@@ -72,7 +155,7 @@
 									</section>
 								-->
 
-<!--
+								<!--
 									<section>
 										<h3 class="major">Text</h3>
 										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
@@ -438,6 +521,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<!-- <script src="./js/ab-player.js"></script> -->
+			<script src="https://cdn.jsdelivr.net/gh/mattbartley/AB-Audio-Player@main/js/ab-player.js"></script>
 	</body>
 </html>

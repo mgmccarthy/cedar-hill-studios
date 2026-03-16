@@ -1,0 +1,1150 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cedar Hill Studios</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+  .ab-player {
+    margin: 2rem 0;
+  }
+
+  .ab-player .player__wrapper {
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    max-width: 36rem;
+  }
+
+  .ab-player .progress__container {
+    height: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+	width: 60%;
+  }
+
+  .ab-player .progress__bar {
+    height: 100%;
+    width: 0%;
+    background: #ffffff;
+  }
+
+  .ab-player .ab__controls,
+  .ab-player .play__stop__controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .ab-player button,
+  .ab-player .button {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: inherit;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    box-shadow: none !important;
+  }
+
+  .ab-player button:hover,
+  .ab-player .button:hover {
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  /* Default A/B state */
+  .ab-player .ab__controls .button,
+  .ab-player .ab__controls button {
+    background: transparent;
+    color: rgba(255,255,255,0.55);
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  /* Selected A/B state: the script uses disabled=true for the active source */
+  .ab-player .ab__controls .button:disabled,
+  .ab-player .ab__controls button:disabled {
+    opacity: 1 !important;
+    background: rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.35) !important;
+    cursor: default;
+  }
+
+  /* Unselected A/B state */
+  .ab-player .ab__controls .button:not(:disabled),
+  .ab-player .ab__controls button:not(:disabled) {
+    background: transparent !important;
+    color: rgba(255,255,255,0.45) !important;
+    border-color: rgba(255,255,255,0.14) !important;
+  }
+
+  /* Play / Stop sizing */
+  .ab-player .play__stop__controls .button,
+  /* .ab-player .play__stop__controls button {
+    min-width: 8rem;
+    text-align: center;
+  } */
+  .ab-player .play__stop__controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.ab-player .play__stop__controls button .icon {
+  margin: 0;
+}
+
+  /* Keep play/stop visible before initialization */
+  .ab-player .play__stop__controls .button:disabled,
+  .ab-player .play__stop__controls button:disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+
+  /* Center everything inside the player card */
+.ab-player .player__wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center the progress bar */
+.ab-player .progress__container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center button rows */
+.ab-player .ab__controls,
+.ab-player .play__stop__controls {
+  justify-content: center;
+}
+
+/* container that holds multiple mix cards */
+.mix-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mix-card {
+  min-width: 0;
+  width: 100%;
+}
+
+.mix-card .ab-player {
+  margin: 0;
+  width: 100%;
+}
+
+.mix-card .player__wrapper {
+  width: 100%;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+
+/* tablet */
+@media screen and (max-width: 980px) {
+  .mix-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 640px) {
+  .mix-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.image.left img {
+  width: 300px;
+}
+
+.image.right img {
+  width: 220px;
+}
+
+p a,
+li a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Cedar Hill Studios</a></h1>
+						<!-- <nav>
+							<a href="#menu">Menu</a>
+						</nav> -->
+					</header>
+
+				<!-- Menu -->
+				 <!--
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="generic.html">Generic</a></li>
+								<li><a href="elements.html">Elements</a></li>
+								<li><a href="#">Log In</a></li>
+								<li><a href="#">Sign Up</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+				-->
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						
+						<header>
+							<div class="inner">
+								<h2>Cedar Hill Studios</h2>
+								<!-- <p>Mixing and Music Production</p> -->
+								<p>Modern mix engineering for rock and alternative artists</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<!-- About -->
+									<section>
+										<h3 class="major">About</h3>
+										<p><span class="image left"><img src="images/about.jpg" alt="" /></span>Cedar Hill Studios is the mixing home of Michael McCarthy — a writer, multi-instrumentalist, producer, and mixing engineer with decades of experience across genres. After cutting his teeth as a working engineer at <a href="https://www.rangerecordingstudio.com/" target="_blank" rel="noopener">Range Recording Studios</a>, Michael developed a strong foundation in professional tracking, editing, and mixing while collaborating with experienced engineers and diverse artists. A classically and jazz-trained trumpet player, he brings a musician's ear and an engineer's precision to every mix, focusing on dynamics, arrangement, and emotional impact.</p>
+										<p>With the release of his most recent album (<a href="https://grandtortoise.bandcamp.com/album/all-in-good-time" target="_blank" rel="noopener">Grand Tortoise's All in Good Time</a>), he's turned his attention to helping other local artists with mixing, production, or just the final push to getting their songs over the finish line.</p>
+									</section>
+
+									<!-- Mix Samples -->
+									<section>
+										<h3 class="major">Mix Samples</h3>
+										<p>These are samples of my mixing work. All mixes were performed at Cedar Hill Studios, are not mastered, and have not been brought up to modern day loudness standards. As such, there will be volume differences between the RAW and FINISHED tracks.</p>
+										
+										<h4>Hard Rock</h4>
+
+										<div class="mix-grid">
+											<!-- Kingdoms - Expose -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/qsjluxu0j3p9rn7ycx8ng/Expose.mp3?rlkey=kj3r1uuilceppmnxm7r90l8jw&st=j52zoq6k&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/sgsqc8ca9glka0wtecpuk/Expose-26.mp3?rlkey=psteah5uzib1yifmtqgpwpj12&st=cnobm4kp&raw=1"
+													>
+													Kingdoms - Expose
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+											<!-- Kingdoms - Pyramids -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/0twt4knzwsnf06zncje6p/PyramidsRecordingSession-02.mp3?rlkey=pqoehkvr4y8ivr6omgzjj4rfr&st=3lf5fieg&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/jd6nrafjtkoj470m99bb1/PyramidsRecordingSession-11.mp3?rlkey=5r88kwib2pfa8r6yj59ks7xmh&st=gtavvb94&raw=1"
+													>
+													Kingdom - Pyramids
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+											<!-- Mandroid Echostar - Lost Luminaries -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/526jzicxjudl2f7oba7xh/LOST-LUMINARIES-AGAIN-01.mp3?rlkey=rplt4g49chr9qr6k9qgvhfsw7&st=3gs4sxyk&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/m8pd3efkp07guxqd6m4mh/LOST-LUMINARIES-AGAIN-06.mp3?rlkey=b68az48qpcezlfmfwfzfonykh&st=sikd2r6k&raw=1"
+													>
+													Mandroid Echostar - Lost Luminaries
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+											<!-- Gardenhead - The Ordeal -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/jmcamsijy6dq5yztuwvcy/The-Ordeal-AGAIN-01.mp3?rlkey=lnr94arp9pr79n4g2ge4pypcx&st=y0mc38s9&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/lraey3ltt3r65stwi09bx/The-Ordeal-AGAIN-09.mp3?rlkey=me01s0kpapwegjllc0amch8jp&st=4fdlacoc&raw=1"
+													>
+													Gardenhead - The Ordeal
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<p></p>
+
+										<h4>Rock</h4>
+										
+										<div class="mix-grid">
+											<!-- Heavy Hearts - Between Mirrors -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+															data-audio-a="https://www.dropbox.com/scl/fi/7o55wp48t8cgysuw5p641/BETWEEN-MIRRORS.mp3?rlkey=fi8ij1785jsygm5jkuzhaf0cr&st=wydgwicy&raw=1"
+															data-audio-b="https://www.dropbox.com/scl/fi/hu4616gsmn303qdoxhbok/BETWEEN-MIRRORS-17.mp3?rlkey=shzawnlnwlbrw6objqe2mx0y7&st=tdk7m4w2&raw=1"
+														>
+														Heavy Hearts - Between Mirrors
+														<div class="progress__container progress">
+															<div class="progress__bar progress__fill"></div>
+														</div>
+														<div class="ab__controls">
+															<button class="button small a__button">Raw</button>
+															<button class="button small b__button">Finished</button>
+														</div>
+														<div class="play__stop__controls">
+															<button class="button small play__pause__button play__button" disabled>
+																<span class="icon solid fa-play"></span><span>Play</span>
+															</button>
+															<button class="button small stop__button" disabled>
+																<span class="icon solid fa-stop"></span><span>Stop</span>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- Runaway Kids - Fade Away -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+															data-audio-a="https://www.dropbox.com/scl/fi/3c4pkmjntqvz5kfod960m/RunawayKids-02.mp3?rlkey=dke1wimdm3j6f4x63nqij6bj9&st=n1br318x&raw=1"
+															data-audio-b="https://www.dropbox.com/scl/fi/dsctazsv9xgbyyjcf3sa1/RunawayKids-01-TEMPLATE-IMPORT-06.mp3?rlkey=ivfzlsu6uham8gvs1lk8ivksh&st=kuvpcta7&raw=1	"
+														>
+														Runaway Kids - Fade Away
+														<div class="progress__container progress">
+															<div class="progress__bar progress__fill"></div>
+														</div>
+														<div class="ab__controls">
+															<button class="button small a__button">Raw</button>
+															<button class="button small b__button">Finished</button>
+														</div>
+														<div class="play__stop__controls">
+															<button class="button small play__pause__button play__button" disabled>
+																<span class="icon solid fa-play"></span><span>Play</span>
+															</button>
+															<button class="button small stop__button" disabled>
+																<span class="icon solid fa-stop"></span><span>Stop</span>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- Burst and Bloom - Take It Back -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+															data-audio-a="https://www.dropbox.com/scl/fi/efyqgx5xnknnhz87rssya/TAKE_IT_BACK_155BPM-01.mp3?rlkey=s42wh2ktlb7i0mv02errs4jjc&st=8ox6w3tp&raw=1"
+															data-audio-b="https://www.dropbox.com/scl/fi/1pwujnof74pr88keen2vs/TAKE-IT-BACK-09-MD.mp3?rlkey=w99tzziuxyvxgcfonj7decibx&st=oduuykq6&raw=1"
+														>
+														<!--Needs Work... TOO BRIGHT. NEED SOME BASS!-->
+														Burst and Bloom - Take It Back
+														<div class="progress__container progress">
+															<div class="progress__bar progress__fill"></div>
+														</div>
+														<div class="ab__controls">
+															<button class="button small a__button">Raw</button>
+															<button class="button small b__button">Finished</button>
+														</div>
+														<div class="play__stop__controls">
+															<button class="button small play__pause__button play__button" disabled>
+																<span class="icon solid fa-play"></span><span>Play</span>
+															</button>
+															<button class="button small stop__button" disabled>
+																<span class="icon solid fa-stop"></span><span>Stop</span>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- Gun - All Fired Up -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+															data-audio-a="https://www.dropbox.com/scl/fi/wzobg6o5g43w8jaoy02sh/All-Fired-Up-AGAIN-01.mp3?rlkey=9gpbboiiznqx9t3gonq17sn00&st=45zr4dv4&raw=1"
+															data-audio-b="https://www.dropbox.com/scl/fi/6w8t34w8mz5mrfe7btyu9/All-Fired-Up-AGAIN-18.mp3?rlkey=v2zom8kwgp3w3fsuptd1h26ie&st=dblyasqd&raw=1"
+														>
+														Gun - All Fired Up
+														<div class="progress__container progress">
+															<div class="progress__bar progress__fill"></div>
+														</div>
+														<div class="ab__controls">
+															<button class="button small a__button">Raw</button>
+															<button class="button small b__button">Finished</button>
+														</div>
+														<div class="play__stop__controls">
+															<button class="button small play__pause__button play__button" disabled>
+																<span class="icon solid fa-play"></span><span>Play</span>
+															</button>
+															<button class="button small stop__button" disabled>
+																<span class="icon solid fa-stop"></span><span>Stop</span>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- Crossley Hunter - Dialatory -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/kwh4nxeqvfhhdvuqit1qi/DIALATORY.mp3?rlkey=jvmd21opztdg4wn7x8jli4dml&st=odvnanm9&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/jb17o78zflkbeqs6vko9q/DIALATORY-06-MASTERDESK.mp3?rlkey=8ipqcqnhfiubllw4igupvlftr&st=twz5nrwp&raw=1"
+													>
+													<!--NEEDS WORK!-->
+													Crossley Hunter - Dialatory
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+											<!-- Radioblack - Sunny Daze -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/5vhwc3suan5wltw1233i6/Radioblack-Sunny-Daze.mp3?rlkey=95076ydyxkxk370qrpnw30263&st=rxtghhb3&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/umeg05zj9ub1ikn4zp3ho/Radioblack-Sunny-Daze-13-MASTERDESK.mp3?rlkey=ib5r0a1sb3qczlayf3abad99j&st=w6nkbyt5&raw=1"
+													>
+													Radioblack - Sunny Daze
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<p></p>
+
+										<h4>Singer-Songwriter</h4>
+										
+										<div class="mix-grid">
+											<!-- Jordan Miller - Advice From Beyonce -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/11cx1cofc8y1l46yyxibb/Advice-From-Beyonce-04.mp3?rlkey=hk0iuzglx6sbvve8xvexbw195&st=pj7iuo7o&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/ul79ow3q0aarkwf83ree4/Advice-From-Beyonce-17.mp3?rlkey=1ccmp16v89e7012brm0cnv9sj&st=spi157mq&raw=1"
+													>
+													Jordan Miller - Advice From Beyonce
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<p></p>
+
+										<h4>Indie/Alternative</h4>
+
+										<div class="mix-grid">
+											<!-- Brandon Bartee - Right Where You Want Me -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+															data-audio-a="https://www.dropbox.com/scl/fi/eb8paszxetugnapakme1t/MixingModernRock-03.mp3?rlkey=hcjihrxseg2jcl5ewy2qep6ve&st=kclpdcmr&raw=1"
+															data-audio-b="https://www.dropbox.com/scl/fi/uockmuu4m1h7i238ym3fm/MixingModernRock-20-MASTERDESK.mp3?rlkey=b7a3wmjnz36h3ur2cmnlstc86&st=6p22plx2&raw=1"
+														>
+														Brandon Bartee - Right Where You Want Me
+														<div class="progress__container progress">
+															<div class="progress__bar progress__fill"></div>
+														</div>
+														<div class="ab__controls">
+															<button class="button small a__button">Raw</button>
+															<button class="button small b__button">Finished</button>
+														</div>
+														<div class="play__stop__controls">
+															<button class="button small play__pause__button play__button" disabled>
+																<span class="icon solid fa-play"></span><span>Play</span>
+															</button>
+															<button class="button small stop__button" disabled>
+																<span class="icon solid fa-stop"></span><span>Stop</span>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- The Playtapes - Skipping Stones -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/ytooookyomspzh0v5rl8t/Skipping-Stones-02.mp3?rlkey=8cxi6n5b2xejhebkym0m5ytrx&st=v5zddgkc&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/tnwwr7p2lefy5ca092rxl/Skipping-Stones-17.mp3?rlkey=hukobehbeilfdp5jyiu38yog3&st=c93dm8ls&dl=0&raw=1"
+													>
+													<!--Needs Work-->
+													The Playtapes - Skipping Stones
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+											<!-- David Bennett - The Pastor's Son -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/p5h9q7ehg025rf4tci7oq/The-Pastor-s-Son.mp3?rlkey=ju5zx86sqk3ecknkf33e6lqiu&st=devivgnr&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/49cy6ev7a86383cscj0is/The-Pastor-s-Son-05.mp3?rlkey=m1jvpv9hpb3jdp682tsdn7wte&st=fy75z86t&raw=1"
+													>
+													<!-- WIP -->
+													David Bennett - The Pastor's Son
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+											<!-- David Ellis - South to Nowhere Fast -->
+											<div class="mix-card">
+												<div class="ab-player">
+													<div class="player__wrapper"
+														data-audio-a="https://www.dropbox.com/scl/fi/zd21iyvl1z0ur63ej77to/South-to-Nowhere-Fast-04.mp3?rlkey=tvk8aie8olf4bg4jqn2kmw7mv&st=adub0095&raw=1"
+														data-audio-b="https://www.dropbox.com/scl/fi/ii36xvvhk42iyghfi419n/South-to-Nowhere-Fast-13.mp3?rlkey=hqxlyfredxrdcavchk8j2sxhy&st=064x3j7w&raw=1"
+													>
+													David Ellis - South to Nowhere Fast
+													<div class="progress__container progress">
+														<div class="progress__bar progress__fill"></div>
+													</div>
+													<div class="ab__controls">
+														<button class="button small a__button">Raw</button>
+														<button class="button small b__button">Finished</button>
+													</div>
+													<div class="play__stop__controls">
+														<button class="button small play__pause__button play__button" disabled>
+															<span class="icon solid fa-play"></span><span>Play</span>
+														</button>
+														<button class="button small stop__button" disabled>
+															<span class="icon solid fa-stop"></span><span>Stop</span>
+														</button>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</section>
+
+									<!-- Old Mix Samples not using MixGrid -->
+									<!-- <section>
+										<h3 class="major">Mix Samples</h3>
+										<h4>Mix Samples</h4>
+										<p>Mix Samples</p>
+
+										<div class="ab-player">
+											<div class="players">
+												<div class="player__wrapper"
+													data-audio-a="https://www.dropbox.com/scl/fi/7o55wp48t8cgysuw5p641/BETWEEN-MIRRORS.mp3?rlkey=fi8ij1785jsygm5jkuzhaf0cr&st=wydgwicy&raw=1"
+													data-audio-b="https://www.dropbox.com/scl/fi/hu4616gsmn303qdoxhbok/BETWEEN-MIRRORS-17.mp3?rlkey=shzawnlnwlbrw6objqe2mx0y7&st=tdk7m4w2&raw=1"
+												>
+												Heavy Hearts - Between Mirrors
+												<div class="progress__container progress">
+													<div class="progress__bar progress__fill"></div>
+												</div>
+												<div class="ab__controls">
+													<button class="button small a__button">Raw</button>
+  													<button class="button small b__button">Finished</button>
+												</div>
+												<div class="play__stop__controls">
+													<button class="button small play__pause__button play__button" disabled>
+														<span class="icon solid fa-play"></span><span>Play</span>
+													</button>
+													<button class="button small stop__button" disabled>
+														<span class="icon solid fa-stop"></span><span>Stop</span>
+													</button>
+												</div>
+												</div>
+											</div>
+										</div>
+
+									</section> -->
+									
+									<p>&nbsp;</p>
+
+									<!-- Showcase -->
+									<section>
+										<h3 class="major">Showcase</h3>
+										<p>Projects I've been involved with, either as a musician, tracking or mixing engineer or producer</p>
+										<div class="box alt">
+											<div class="row gtr-uniform">
+												<!-- <div class="col-12"><span class="image fit"><img src="images/pic08.jpg" alt="" /></span></div> -->
+												<div class="col-4"><span class="image fit"><a href="https://grandtortoise.bandcamp.com/album/all-in-good-time" target="_blank" rel="noopener"><img src="images/GrandTortoiseAllInGoodTime.jpg" alt="" /></a></span>wrote, performed, recorded, mixed and produced</div>
+												<div class="col-4"><span class="image fit"><a href="https://music.apple.com/us/album/blue-light-sessions/357223372" target="_blank" rel="noopener"><img src="images/LauraShayBlueLightSessions.jpg" alt="" /></a></span>performed</div>
+												<div class="col-4"><span class="image fit"><a href="https://music.apple.com/us/album/love-other-things/485480855" target="_blank" rel="noopener"><img src="images/LauraShayLoveAndOtherThings.jpg" alt="" /></a></span></span>recorded and produced</div>
+												<div class="col-4"><span class="image fit"><a href="https://lifeslidesdown.bandcamp.com/album/faulty-wiring" target="_blank" rel="noopener"><img src="images/LifeSlidesDownFaultyWiring.jpg" alt="" /></a></span>performed and mixed</div>
+												<div class="col-4"><span class="image fit"><a href="https://ourstage.com/profile/refurb" target="_blank" rel="noopener"><img src="images/RefurbSway.jpg" alt="" /></a></span>recorded, mixed and produced</div>
+												<div class="col-4"><span class="image fit"><a href="https://thegreatunknown.bandcamp.com/album/tonight-lets-pretend" target="_blank" rel="noopener"><img src="images/TheGreatUnknown.jpg" alt="" /></a></span>recorded</div>
+												<!--
+												<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
+												<div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
+												<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
+												-->
+											</div>
+										</div>
+									</section>
+
+									<!-- Send me your demo-->
+									<section>
+										<h3 class="major">Send Me Your Demo!</h3>
+										<p>
+											<span class="image right"><img src="images/TapeReel2.jpg" alt="" /></span>
+											Curious what your track could sound like? Upload your demo and I'll create a short “teaser mix” so you can hear the direction before committing to anything — no pressure.
+											<p></p>
+											When sending your track, please include:
+											<ul>
+												<li>WAV multitracks (stems)</li>
+												<li>Bit depth (16-bit or 24-bit)</li>
+												<li>Sample rate (44.1 kHz, 48 kHz, etc.)</li>
+												<li>Song BPM / tempo</li>
+												<li>Pro Tools session (if applicable)</li>
+											</ul>
+
+											<a href="https://www.dropbox.com/request/gbqOmd3NI0ubFaJUyOSl" class="button primary" target="_blank" rel="noopener">Upload demo</a>
+										</p>
+									</section>
+
+									<!-- Mixing Rates -->
+									<section>
+										<h3 class="major">Mixing Rates</h3>
+										<p>Mixing rates are listed below, with discounts available for multi-song projects from the same session.</p>
+										<p>
+											<div class="table-wrapper">
+												<table>
+													<thead>
+														<tr>
+															<th>Package</th>
+															<th>Bundle Discount</th>
+															<th>Total Price</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Single Song</td>
+															<td>—</td>
+															<td>$60</td>
+														</tr>
+														<tr>
+															<td>3 Songs</td>
+															<td>$15 off</td>
+															<td>$165</td>
+														</tr>
+														<tr>
+															<td>5 Songs</td>
+															<td>$50 off</td>
+															<td>$250</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<i>* For 5 on more songs, please contact me at <b><a href="mailto:cedarhillmix@gmail.com?subject=Mixing Inquiry">cedarhillmix@gmail.com</a></b> for a custom quote.</i>
+										</p>
+
+										<h4>Mix Revisions</h4>
+											<p>
+											Each mix includes one free revision so we can make any small adjustments after you hear the first version.
+											Additional revisions are available if needed and are billed at a small flat fee.
+											</p>
+
+											<div class="table-wrapper">
+												<table>
+													<thead>
+														<tr>
+															<th>Package</th>
+															<th>Included Revisions</th>
+															<th>Additional Revisions</th>
+														</tr>
+													</thead>
+												<tbody>
+													<tr>
+														<td>Single Song</td>
+														<td>1</td>
+														<td>$15 each</td>
+													</tr>
+													<tr>
+														<td>3 Songs</td>
+														<td>2</td>
+														<td>$10 each</td>
+													</tr>
+													<tr>
+														<td>5 Songs</td>
+														<td>3</td>
+														<td>$10 each</td>
+													</tr>
+												</tbody>
+												</table>
+											</div>
+
+											<p>
+											<i>* Revisions cover mix adjustments such as levels, EQ, and effects. New stems or major arrangement changes may require additional mix work.</i>
+											</p>
+
+									</section>
+
+									<!-- Lists -->
+									<!-- <section>
+										<h3 class="major">Lists</h3>
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<h4>Unordered</h4>
+												<ul>
+													<li>Dolor pulvinar etiam.</li>
+													<li>Sagittis adipiscing.</li>
+													<li>Felis enim feugiat.</li>
+												</ul>
+												<h4>Alternate</h4>
+												<ul class="alt">
+													<li>Dolor pulvinar etiam.</li>
+													<li>Sagittis adipiscing.</li>
+													<li>Felis enim feugiat.</li>
+												</ul>
+											</div>
+											<div class="col-6 col-12-medium">
+												<h4>Ordered</h4>
+												<ol>
+													<li>Dolor pulvinar etiam.</li>
+													<li>Etiam vel felis viverra.</li>
+													<li>Felis enim feugiat.</li>
+													<li>Dolor pulvinar etiam.</li>
+													<li>Etiam vel felis lorem.</li>
+													<li>Felis enim et feugiat.</li>
+												</ol>
+												<h4>Icons</h4>
+												<ul class="icons">
+													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+												</ul>
+											</div>
+										</div>
+										<h4>Actions</h4>
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<ul class="actions">
+													<li><a href="#" class="button primary">Default</a></li>
+													<li><a href="#" class="button">Default</a></li>
+												</ul>
+												<ul class="actions small">
+													<li><a href="#" class="button primary small">Small</a></li>
+													<li><a href="#" class="button small">Small</a></li>
+												</ul>
+												<ul class="actions stacked">
+													<li><a href="#" class="button primary">Default</a></li>
+													<li><a href="#" class="button">Default</a></li>
+												</ul>
+												<ul class="actions stacked small">
+													<li><a href="#" class="button primary small">Small</a></li>
+													<li><a href="#" class="button small">Small</a></li>
+												</ul>
+											</div>
+											<div class="col-6 col-12-medium">
+												<ul class="actions stacked">
+													<li><a href="#" class="button primary fit">Default</a></li>
+													<li><a href="#" class="button fit">Default</a></li>
+												</ul>
+												<ul class="actions stacked small">
+													<li><a href="#" class="button primary small fit">Small</a></li>
+													<li><a href="#" class="button small fit">Small</a></li>
+												</ul>
+											</div>
+										</div>
+										<h4>Pagination</h4>
+										<ul class="pagination">
+											<li><span class="button small disabled">Prev</span></li>
+											<li><a href="#" class="page active">1</a></li>
+											<li><a href="#" class="page">2</a></li>
+											<li><a href="#" class="page">3</a></li>
+											<li><span>&hellip;</span></li>
+											<li><a href="#" class="page">8</a></li>
+											<li><a href="#" class="page">9</a></li>
+											<li><a href="#" class="page">10</a></li>
+											<li><a href="#" class="button small">Next</a></li>
+										</ul>
+									</section> -->
+
+									<!-- Tables -->
+									<!-- <section>
+										<h3 class="major">Table</h3>
+										<h4>Default</h4>
+										<div class="table-wrapper">
+											<table>
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Description</th>
+														<th>Price</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Item One</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Two</td>
+														<td>Vis ac commodo adipiscing arcu aliquet.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Three</td>
+														<td> Morbi faucibus arcu accumsan lorem.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Four</td>
+														<td>Vitae integer tempus condimentum.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Five</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<td colspan="2"></td>
+														<td>100.00</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+
+										<h4>Alternate</h4>
+										<div class="table-wrapper">
+											<table class="alt">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Description</th>
+														<th>Price</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Item One</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Two</td>
+														<td>Vis ac commodo adipiscing arcu aliquet.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Three</td>
+														<td> Morbi faucibus arcu accumsan lorem.</td>
+														<td>29.99</td>
+													</tr>
+													<tr>
+														<td>Item Four</td>
+														<td>Vitae integer tempus condimentum.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item Five</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<td colspan="2"></td>
+														<td>100.00</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+									</section> -->
+
+									<!-- Buttons -->
+									<!-- <section>	
+										<h3 class="major">Buttons</h3>
+										<ul class="actions">
+											<li><a href="#" class="button primary">Primary</a></li>
+											<li><a href="#" class="button">Default</a></li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#" class="button large">Large</a></li>
+											<li><a href="#" class="button small">Small</a></li>
+										</ul>
+										<ul class="actions fit">
+											<li><a href="#" class="button fit">Fit</a></li>
+											<li><a href="#" class="button primary fit">Fit</a></li>
+											<li><a href="#" class="button fit">Fit</a></li>
+										</ul>
+										<ul class="actions fit small">
+											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+											<li><a href="#" class="button fit small">Fit + Small</a></li>
+											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+										</ul>
+										<ul class="actions">
+											<li><span class="button primary disabled">Disabled</span></li>
+											<li><span class="button disabled">Disabled</span></li>
+										</ul>
+									</section> -->
+
+									<!-- Forms -->
+									<!-- <section>
+										<h3 class="major">Form</h3>
+										<form method="post" action="#">
+											<div class="row gtr-uniform">
+												<div class="col-6 col-12-xsmall">
+													<label for="demo-name">Name</label>
+													<input type="text" name="demo-name" id="demo-name" value="" />
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<label for="demo-email">Email</label>
+													<input type="email" name="demo-email" id="demo-email" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Category</label>
+													<select name="demo-category" id="demo-category">
+														<option value="">-</option>
+														<option value="1">Manufacturing</option>
+														<option value="1">Shipping</option>
+														<option value="1">Administration</option>
+														<option value="1">Human Resources</option>
+													</select>
+												</div>
+												<div class="col-4 col-12-small">
+													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+													<label for="demo-priority-low">Low Priority</label>
+												</div>
+												<div class="col-4 col-12-small">
+													<input type="radio" id="demo-priority-normal" name="demo-priority">
+													<label for="demo-priority-normal">Normal Priority</label>
+												</div>
+												<div class="col-4 col-12-small">
+													<input type="radio" id="demo-priority-high" name="demo-priority">
+													<label for="demo-priority-high">High Priority</label>
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="checkbox" id="demo-copy" name="demo-copy">
+													<label for="demo-copy">Email me a copy</label>
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="checkbox" id="demo-human" name="demo-human" checked>
+													<label for="demo-human">Not a robot</label>
+												</div>
+												<div class="col-12">
+													<label for="demo-message">Message</label>
+													<textarea name="demo-message" id="demo-message" rows="6"></textarea>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" value="Send Message" class="primary" /></li>
+														<li><input type="reset" value="Reset" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section> -->
+
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Contact Me</h2>
+								<p>Contact Me</p>
+							<!-- <form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form> -->
+							<ul class="contact">
+								<li class="icon solid fa-home">Royal Oak, MI 48067</li>
+								<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+								<li class="icon solid fa-envelope"><a href="#">cedarhillmix@gmail.com</a></li>
+								<!-- <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li> -->
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Cedar Hill Studios. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/ab-player.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/mattbartley/AB-Audio-Player@main/js/ab-player.js"></script> -->
+	</body>
+</html>

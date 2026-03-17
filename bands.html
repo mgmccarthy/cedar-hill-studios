@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cedar Hill Studios</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+  .ab-player {
+    margin: 2rem 0;
+  }
+
+  .ab-player .player__wrapper {
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    max-width: 36rem;
+  }
+
+  .ab-player .progress__container {
+    height: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+	width: 60%;
+  }
+
+  .ab-player .progress__bar {
+    height: 100%;
+    width: 0%;
+    background: #ffffff;
+  }
+
+  .ab-player .ab__controls,
+  .ab-player .play__stop__controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .ab-player button,
+  .ab-player .button {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: inherit;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    box-shadow: none !important;
+  }
+
+  .ab-player button:hover,
+  .ab-player .button:hover {
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  /* Default A/B state */
+  .ab-player .ab__controls .button,
+  .ab-player .ab__controls button {
+    background: transparent;
+    color: rgba(255,255,255,0.55);
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  /* Selected A/B state: the script uses disabled=true for the active source */
+  .ab-player .ab__controls .button:disabled,
+  .ab-player .ab__controls button:disabled {
+    opacity: 1 !important;
+    background: rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.35) !important;
+    cursor: default;
+  }
+
+  /* Unselected A/B state */
+  .ab-player .ab__controls .button:not(:disabled),
+  .ab-player .ab__controls button:not(:disabled) {
+    background: transparent !important;
+    color: rgba(255,255,255,0.45) !important;
+    border-color: rgba(255,255,255,0.14) !important;
+  }
+
+  /* Play / Stop sizing */
+  .ab-player .play__stop__controls .button,
+  /* .ab-player .play__stop__controls button {
+    min-width: 8rem;
+    text-align: center;
+  } */
+  .ab-player .play__stop__controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.ab-player .play__stop__controls button .icon {
+  margin: 0;
+}
+
+  /* Keep play/stop visible before initialization */
+  .ab-player .play__stop__controls .button:disabled,
+  .ab-player .play__stop__controls button:disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+
+  /* Center everything inside the player card */
+.ab-player .player__wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center the progress bar */
+.ab-player .progress__container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center button rows */
+.ab-player .ab__controls,
+.ab-player .play__stop__controls {
+  justify-content: center;
+}
+
+/* container that holds multiple mix cards */
+.mix-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mix-card {
+  min-width: 0;
+  width: 100%;
+}
+
+.mix-card .ab-player {
+  margin: 0;
+  width: 100%;
+}
+
+.mix-card .player__wrapper {
+  width: 100%;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+
+/* tablet */
+@media screen and (max-width: 980px) {
+  .mix-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 640px) {
+  .mix-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.image.left img {
+  width: 350px;
+}
+
+.image.right img {
+  width: 300px;
+}
+
+p a,
+li a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Cedar Hill Studios</a></h1>
+						<!-- <nav>
+							<a href="#menu">Menu</a>
+						</nav> -->
+					</header>
+
+				<!-- Menu -->
+				 <!--
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="generic.html">Generic</a></li>
+								<li><a href="elements.html">Elements</a></li>
+								<li><a href="#">Log In</a></li>
+								<li><a href="#">Sign Up</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+				-->
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						
+						<header>
+							<div class="inner">
+								<h2>Cedar Hill Studios</h2>
+								<!-- <p>Mixing and Music Production</p> -->
+								<p>Live Performance and Bands</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<!-- About -->
+									<section>
+										<h3 class="major">About</h3>
+										<p><span class="image left"><img src="images/about.jpg" alt="" /></span>Something clever.</p>
+										<p>and even something more clever.</p>
+									</section>
+
+									<p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+
+									<!-- Showcase -->
+									<section>
+										<h3 class="major">Bands</h3>
+										<p>Bands I've been a member of or collaborated with:</p>
+
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7-fs_8siOew?si=YGdJj4Xg6XkLvSos" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        
+									</section>
+
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Contact Me</h2>
+								<p>Contact Me</p>
+							<ul class="contact">
+								<li class="icon solid fa-home">Royal Oak, MI 48067</li>
+								<li class="icon solid fa-envelope"><a href="#">cedarhillmix@gmail.com</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Cedar Hill Studios. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/ab-player.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/mattbartley/AB-Audio-Player@main/js/ab-player.js"></script> -->
+	</body>
+</html>

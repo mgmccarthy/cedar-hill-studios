@@ -189,6 +189,59 @@ li a {
   font-weight: 600;
 }
 
+#page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #1b1f22; /* match template */
+  padding: 0.75em 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#page-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#page-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.8;
+}
+
+#page-nav a:hover {
+  opacity: 1;
+}
+
+#page-nav {
+  background: rgba(20, 24, 28, 0.95);
+  padding: 0.6em 0;
+}
+
+#page-nav ul {
+  gap: 1.5em;
+}
+
+#page-nav a {
+  font-size: 0.8em;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, border-bottom 0.2s ease;
+  padding-bottom: 4px;
+}
+
+#page-nav a:hover {
+  opacity: 1;
+  border-bottom: 2px solid #ffffff;
+}
+
 </style>
 
 	</head>
@@ -236,16 +289,32 @@ li a {
 						<!-- Content -->
 							<div class="wrapper">
 								<div class="inner">
+									
+									<!-- nav -->
+									<section id="nav">
+										<nav id="page-nav">
+											<ul>
+												<li><a href="#about">About</a></li>
+												<li><a href="#mixes">Mix Samples</a></li>
+												<li><a href="#showcase">Showcase</a></li>
+												<li><a href="#send-tracks">Upload Tracks</a></li>
+												<li><a href="#mixing-rates">Mixing Rates</a></li>
+												<li><a href="#footer">Contact Me</a></li>
+											</ul>
+										</nav>
+									</section>
+
+									<p></p>
 
 									<!-- About -->
-									<section>
+									<section id="about">
 										<h3 class="major">About</h3>
 										<p><span class="image left"><img src="images/about.jpg" alt="" /></span>Cedar Hill Studios is the mixing home of Michael McCarthy — a singer-songwriter, multi-instrumentalist, producer, and mixing engineer with decades of experience across genres. After cutting his teeth as a working engineer at <a href="https://www.rangerecordingstudio.com/" target="_blank" rel="noopener">Range Recording Studios</a>, Michael developed a strong foundation in professional tracking, editing, and mixing while collaborating with experienced engineers and diverse artists. A classically and jazz-trained trumpet player, he brings a musician's ear and an engineer's precision to every mix, focusing on dynamics, arrangement, and emotional impact.</p>
 										<p>With the release of his most recent album (<a href="https://grandtortoise.bandcamp.com/album/all-in-good-time" target="_blank" rel="noopener">Grand Tortoise's All in Good Time</a>), he's turned his attention to helping other local artists with mixing, production, or just the final push to getting their songs over the finish line.</p>
 									</section>
 
 									<!-- Mix Samples -->
-									<section>
+									<section id="mixes">
 										<h3 class="major">Mix Samples</h3>
 										<p>These are samples of my mixing work. All mixes were performed at Cedar Hill Studios, are not mastered, and have not been brought up to modern day loudness standards. As such, there will be volume differences between the RAW and FINISHED tracks.</p>
 										
@@ -732,7 +801,7 @@ li a {
 									<p>&nbsp;</p>
 
 									<!-- Showcase -->
-									<section>
+									<section id = "showcase">
 										<h3 class="major">Showcase</h3>
 										<p>Projects I've been involved with, either as a musician, tracking or mixing engineer or producer</p>
 										<div class="box alt">
@@ -759,7 +828,7 @@ li a {
 									</section>
 
 									<!-- Send me your tracks -->
-									<section>
+									<section id = "send-tracks">
 										<h3 class="major">Send Me Your Tracks!</h3>
 										<p>
 											<span class="image right"><img src="images/TapeReel2.jpg" alt="" /></span>
@@ -781,7 +850,7 @@ li a {
 									</section>
 
 									<!-- Mixing Rates -->
-									<section>
+									<section id = "mixing-rates">
 										<h3 class="major">Mixing Rates</h3>
 										<p>Mixing rates are listed below, with discounts available for multi-song projects from the same session.</p>
 										<p>
